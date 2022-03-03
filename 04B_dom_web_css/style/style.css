@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&family=Oswald&display=swap');
+
+body {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fef6e4;
+    font-family: Oswald, sans-serif;
+
+}
+
+header {
+    background-color: #f3d2c1;
+    min-height: 140px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 25px;
+}
+
+main {
+    max-width: 900px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: space-around;
+}
+
+footer {
+    margin-top: 25px;
+    font-family: Oswald, sans-serif;
+    text-align: center;
+    color: #001858;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+nav a {
+    color: #001858;
+    font-family: Oswald, sans-serif;
+    background-color: #f582ae;
+    margin: 5px;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: #fef6e4;
+}
+
+h1 {
+    font-family: Oswald, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin: 5px;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    width: 130px;
+    height: 190px;
+    border: 3px solid #999;
+    border-radius: 10px;
+}
+
+.item-container:hover {
+    background-color: #8bd3dd;
+}
+
+.fruit-name {
+    font-family: Oswald, sans-serif;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+.fruit-price {
+
+    font-size: 24px;
+    color: #999;
+    text-align: right;
+}
+
+.buy-list {
+    margin: 0 auto;
+    width: 100%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.buy-list div {
+    display: flex;
+    justify-content: space-between
+}
+
+.buylist-title {
+    width: 100%;
+    font-size: 35px;
+    text-align: center;
+}
