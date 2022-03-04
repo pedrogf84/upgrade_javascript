@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <input id="input1" , class="click" type="text" />
+    <button type="button" id="btnToClick"
+        onclick="console.log('click event', document.getElementById('input1').value)">Click me</button>
+    <br />
+    <input id="input2" class="focus" type="text"
+        onfocus="(console.log('focus event', document.getElementById('input2').value) )" />
+    <br />
+    <input id="input3" dclass="value" type="text"
+        onchange="(console.log('input event', document.getElementById('input3').value))" />
+</body>
+
+</html>
