@@ -15,37 +15,53 @@ eliminemos el parrafo asociado.
 const baseUrl = "https://api.nationalize.io";
 let board = document.querySelector("#board");
 
+/*
+THE GETDATA FUNCTION
+
+@params
+value -> input introduced by user.
+*/
 async function getData(value) {
+  //no empty values check
   if (value == "") {
     alert("Tienes que introducir algun nombre para la busqueda.");
     return;
   }
+  //petition
   let response = await fetch(baseUrl + "?name=" + value.toLowerCase());
   let dataJson = await response.json();
   let data = [...dataJson.country];
 
+  //cleaning user input
   document.querySelector("#input").value = "";
 
+  //print data
   if (data.length > 0) {
     let answerTitle = document.createElement("p");
+    //the all data title
     answerTitle.className = "answer-title";
     answerTitle.innerHTML = `El nombre ${value.toUpperCase()} tiene la posibilidad de encontrarse en los siguientes paises`;
     board.appendChild(answerTitle);
 
     data.forEach((item) => {
+      //the container div
       let container$$ = document.createElement("div");
       container$$.className = "item-container";
+      //the individual information
       let p$$ = document.createElement("p");
+      p$$.innerHTML = `${item.country_id} -- ${item.probability}`;
+      //the delete current div btn
       const btnDelete$$ = document.createElement("button");
       btnDelete$$.className = "btn-delete";
       btnDelete$$.textContent = "X";
       btnDelete$$.addEventListener("click", () => removeItem(container$$));
-      p$$.innerHTML = `${item.country_id} -- ${item.probability}`;
+      //appending all items to container and board
       container$$.appendChild(p$$);
       container$$.appendChild(btnDelete$$);
       board.appendChild(container$$);
     });
   } else {
+    //nothing found matching user's petition
     let nothingFound = document.createElement("p");
     nothingFound.innerHTML =
       "No se han encontrado registros para la petición introducida.";
@@ -53,8 +69,10 @@ async function getData(value) {
   }
 }
 
+//THE REMOVE ITEM DIV FUNCTION
 function removeItem(container$$) {
   container$$.remove();
+  //checking if there are no divs containing info
   if (document.querySelectorAll(".item-container").length == 0)
-    document.querySelector(".answer-title").innerHTML = "";
+    document.querySelector(".answer-title").remove();
 }
