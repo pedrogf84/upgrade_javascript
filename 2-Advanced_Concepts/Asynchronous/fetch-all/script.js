@@ -55,7 +55,6 @@ async function getData(value) {
 
 function removeItem(container$$) {
   container$$.remove();
-  console.log(document.querySelectorAll(".item-container").length);
   if (document.querySelectorAll(".item-container").length == 0)
     document.querySelector(".answer-title").innerHTML = "";
 }
