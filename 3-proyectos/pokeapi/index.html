@@ -12,8 +12,16 @@
 
 <body>
     <header>
+        <div class="search">
+            <input type="text" id="search-input">
+            <button id="button" onclick="filterPokemons(document.querySelector('#search-input').value)">
+                <img id="magnifying-glass" src="./assets/magnifying-glass.png"></button>
+        </div>
         <img id="banner" src="./assets/logo.svg">
     </header>
+
+
+
 
     <div id="container"></div>
 
